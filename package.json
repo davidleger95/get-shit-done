@@ -1,7 +1,7 @@
 {
-  "name": "react-starter",
+  "name": "get-shit-done",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,6 +21,7 @@
     "node-notifier": "^4.2.1",
     "react": "^0.13.3",
     "react-router": "1.0.0-beta2",
+    "react-svg-icons": "^0.2.0",
     "reactfire": "^0.4.0",
     "reactify": "^1.1.0",
     "reflux": "^0.2.8",

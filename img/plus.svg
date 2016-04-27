@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3 (11970) - http://www.bohemiancoding.com/sketch -->
+    <title>Rectangle 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <path d="M45,45 L4.99322906,45 C2.22884957,45 0,47.2385763 0,50 C0,52.7558048 2.2355448,55 4.99322906,55 L45,55 L45,95.0067709 C45,97.7711504 47.2385763,100 50,100 C52.7558048,100 55,97.7644552 55,95.0067709 L55,55 L95.0067709,55 C97.7711504,55 100,52.7614237 100,50 C100,47.2441952 97.7644552,45 95.0067709,45 L55,45 L55,4.99322906 C55,2.22884957 52.7614237,0 50,0 C47.2441952,0 45,2.2355448 45,4.99322906 L45,45 Z" id="Rectangle-3" fill="#D8D8D8" sketch:type="MSShapeGroup"></path>
+    </g>
+</svg>

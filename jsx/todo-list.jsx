@@ -1,71 +1,38 @@
 var React = require('react');
 var Input = require('./input');
+var ListItem = require('./list-item');
 module.exports = React.createClass({
+
     render: function(){
+
         return <div className="list-wrapper">
-            <Input placeholder="What shit needs to get done?" />
+            <Input placeholder="What shit needs to get done?" items={this.props.itemsWrite} />
             <ul className="list">
-                <li className="list-item active">
-                    <span className="check"></span>
-                    Daily Design #3: Simple Todo List
-                    <span className="due">In 2 days</span>
-                </li>
-                <li className="list-item active">
-                    <span className="check"></span>
-                    Reply to emails... get inbox to zero!!
-                    <span className="due">Today</span>
-                </li>
-                <li className="list-item complete">
-                    <span className="check"></span>
-                    Another Todo
-                    <span className="due">Today</span>
-                </li>
-                <li className="list-item complete">
-                    <span className="check"></span>
-                    One More
-                    <span className="due">Today</span>
-                </li>
-                <li className="list-item complete">
-                    <span className="check"></span>
-                    Another Todo
-                    <span className="due">Today</span>
-                </li>
-                <li className="list-item complete">
-                    <span className="check"></span>
-                    One More
-                    <span className="due">Today</span>
-                </li>
-                <li className="list-item complete">
-                    <span className="check"></span>
-                    Another Todo
-                    <span className="due">Today</span>
-                </li>
-                <li className="list-item complete">
-                    <span className="check"></span>
-                    One More
-                    <span className="due">Today</span>
-                </li>
-                <li className="list-item complete">
-                    <span className="check"></span>
-                    Another Todo
-                    <span className="due">Today</span>
-                </li>
-                <li className="list-item complete">
-                    <span className="check"></span>
-                    One More
-                    <span className="due">Today</span>
-                </li>
-                <li className="list-item complete">
-                    <span className="check"></span>
-                    Another Todo
-                    <span className="due">Today</span>
-                </li>
-                <li className="list-item complete">
-                    <span className="check"></span>
-                    One More
-                    <span className="due">Today</span>
-                </li>
+                {this.todo().active}
+                {this.todo().done}
+                {this.todo().empty}
             </ul>
         </div>
+    },
+    todo: function(){
+        //console.log("render");
+        if(Object.keys(this.props.itemsRead).length === 0){
+            return { empty: <p className="empty-list">No shit to do.</p> }
+        }else{
+            var active = [], done = [];
+
+            for (var key in this.props.itemsRead){
+                var item = this.props.itemsRead[key];
+                item.key = key;
+                if(this.props.itemsRead[key].done){
+                    done.push(<ListItem item = {item} key = {key}></ListItem>);
+                }else{
+                    active.push(<ListItem item = {item} key = {key}></ListItem>);
+                }
+            }
+            active = active.reverse();
+            done = done.reverse();
+            return {active: active, done: done};
+        }
     }
 });
