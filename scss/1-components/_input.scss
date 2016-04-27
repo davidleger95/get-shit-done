@@ -6,18 +6,18 @@
         content: "»";
         color: $primary;
     }
-}
-input{
-    width: calc(100% - 100px);
-    padding: 20px;
-    font-style: italic;
-    font-weight: 100;
-    border: none;
-    background: $light;
-    font-size: 18px;
-    &:focus{
-        outline: none;
+    input{
+        width: calc(100% - 100px);
+        padding: 20px;
+        font-style: italic;
+        font-weight: 100;
+        border: none;
+        background: $light;
+        font-size: 18px;
+        &:focus{
+            outline: none;
+
+        }
 
     }
-    
 }

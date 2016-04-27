@@ -3,7 +3,8 @@ var React = require('react');
 module.exports = React.createClass({
     getInitialState: function(){
         return {
-            text: ''
+            text: '',
+            date: 'today'
         }
     },
     render: function(){
@@ -11,11 +12,22 @@ module.exports = React.createClass({
             <input type="text"
                    value={this.state.text}
                    onChange={this.handleInputChange}
-                   onKeyPress={this.handleSubmit}
+                   onKeyUp={this.handleSubmit}
                    placeholder={this.props.placeholder}/>
         </div>
     },
     handleSubmit: function(e){
+        if(e.keyCode == 13){    // On Enter key
+            this.props.items.push({
+                text: this.state.text,
+                date: this.state.date,
+                done: false
+            });
+            this.setState({
+                text: '',
+                date: new Date()
+            });
+        }
 
     },
     handleInputChange: function(e){

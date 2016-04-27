@@ -12,16 +12,28 @@ var rootURL = "https://shining-heat-6642.firebaseio.com/";
 
 var App = React.createClass({
     mixins: [ ReactFire ],
+    getInitialState: function(){
+        return {
+            items: {},
+            loaded: false
+        }
+    },
     componentWillMount: function(){
-        this.bindAsObject(new Firebase(rootURL + 'items/'), 'items');
+        var fb = new Firebase(rootURL + 'items/');
+        this.bindAsObject(fb, 'items');
+        fb.on('value', this.handleDataLoaded);
     },
     render: function(){
         console.log("Hello");
         console.log(this.state);
         return <div className="container">
             <Header data={this.props.data.nav} />
-            <TodoList />
+            <TodoList itemsWrite={this.firebaseRefs.items}
+                      itemsRead={this.state.items} />
         </div>
+    },
+    handleDataLoaded: function(){
+        this.setState({ loaded: true });
     }
 });
 

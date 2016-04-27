@@ -1,0 +1,11 @@
+button{
+    background: none;
+    border: none;
+    margin: 10px 0;
+    height: 30px;
+    width: 30px;
+    transition: 100ms transform ease-in-out;
+    &:hover{
+        transform: scale(1.3);
+    }
+}

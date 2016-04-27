@@ -13,7 +13,7 @@ module.exports = React.createClass({
             <nav>
                 {list}
             </nav>
-            <Button title="+"/>
+            <Button title="" icon="../img/plus.svg"/>
         </header>
     }
 });
