@@ -11,7 +11,8 @@ module.exports = React.createClass({
                 <img src="http://fillmurray.com/80/80" alt="Image"/>
             </div>
             <nav>
-                {list}
+                <NavItem/>
+                
             </nav>
             <Button title="" icon="img/plus.svg"/>
         </header>

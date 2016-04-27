@@ -16,7 +16,7 @@ module.exports = React.createClass({
     },
     todo: function(){
         //console.log("render");
-        if(this.props.itemsRead == null || Object.keys(this.props.itemsRead).length === 0){
+        if(!this.props.itemsRead){  // empty list.
             return { empty: <p className="empty-list">No shit to do.</p> }
         }else{
             var active = [], done = [];
