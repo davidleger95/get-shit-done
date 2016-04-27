@@ -30,8 +30,15 @@ module.exports = React.createClass({
                     active.push(<ListItem item = {item} key = {key}></ListItem>);
                 }
             }
+<<<<<<< Updated upstream
             active = active.reverse();
             done = done.reverse();
+=======
+            // flip ordering
+            active = active.reverse();
+            done = done.reverse();
+
+>>>>>>> Stashed changes
             return {active: active, done: done};
         }
     }
