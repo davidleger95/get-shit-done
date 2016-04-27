@@ -1,5 +1,5 @@
 var React = require('react');
-
+var Button = require('./button');
 var rootURL = "https://shining-heat-6642.firebaseio.com/";
 
 module.exports = React.createClass({
@@ -18,19 +18,24 @@ module.exports = React.createClass({
         //alert(!this.state.done);
         return <li className={ "list-item " + (this.state.done ? "complete":"active") }>
             <div className="check">
-                <img onClick={this.handleClick}
+                <img onClick={this.handleCheck}
                      className="icon icon-check"
                      src={ "img/check-" + (this.state.done ? "color":"grey") + ".svg"} />
             </div>
             {this.state.text}
-            <span type="date"
-                   className="due">
-                   {this.state.date}</span>
+            <button className="trash"
+                    onClick={this.handleDelete}>
+            <img className="icon icon-plus"
+                 src="img/trash.svg" />
+            </button>
         </li>
     },
-    handleClick: function(){
+    handleCheck: function(){
         var update = { done: !this.state.done };
         this.setState(update);
         this.fb.update(update);
+    },
+    handleDelete: function(){
+        this.fb.remove();
     }
 });

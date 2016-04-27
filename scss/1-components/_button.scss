@@ -9,3 +9,17 @@ button{
         transform: scale(1.3);
     }
 }
+
+.trash{
+    display: block;
+    float: right;
+    margin: 0;
+    height: 20px;
+    opacity: 0;
+    //transition: 100ms all ease-in-out;
+}
+.list-item:hover{
+    .trash{
+        opacity: 1;
+    }
+}
