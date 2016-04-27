@@ -20,7 +20,7 @@ module.exports = React.createClass({
             <div className="check">
                 <img onClick={this.handleClick}
                      className="icon icon-check"
-                     src={ "../img/check-" + (this.state.done ? "color":"grey") + ".svg"} />
+                     src={ "img/check-" + (this.state.done ? "color":"grey") + ".svg"} />
             </div>
             {this.state.text}
             <span type="date"
